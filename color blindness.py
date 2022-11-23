@@ -9,7 +9,7 @@ import pandas as pd # pandas импортируется как pd
 import cv2 # OpenCv импортируется как cv2
 
 # выбираем картинку которую будем использовать
-img = cv2.imread("C:/Users/evgen/OneDrive/Рабочий стол/evgeniymosk2/photocolors.png")
+img = cv2.imread("photocolors.png")
 
 # теперь нужно научить машину определять цвета с помощью трех цветов К-ный.З-ный.С-ний.
 # для этого будем использовать формат RGB в качестве точек данных 
@@ -18,7 +18,7 @@ img = cv2.imread("C:/Users/evgen/OneDrive/Рабочий стол/evgeniymosk2/p
 # Метод read_csv помогает программе управлять csv файлами, например читать
 
 index=["color", "color_name", "hex", "R", "G", "B"]
-csv = pd.read_csv("C:/Users/evgen/OneDrive/Рабочий стол/evgeniymosk2/colors.csv", names=index, header=None)
+csv = pd.read_csv("colors.csv", names=index, header=None)
 
 # для бесперебойно работы приложения обьявляем глобальную переменную
 clicked = False
@@ -72,6 +72,6 @@ while(1):
         clicked=False
 
     # с помощью клавиши Esc прекращаем работу цикла и закрываем окно
-    if cv2.waitKey(Esc) & 0xFF ==27:
+    if cv2.waitKey(20) & 0xFF ==27:
         break
 cv2.destroyAllWindows()
